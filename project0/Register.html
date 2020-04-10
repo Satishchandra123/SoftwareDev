@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RegisterPage</title>
+        <style>
+            .container {
+                padding: 16px;
+            }
+            input[type=text], input[type=password], input[type=email] {
+            width: 70%;
+            padding: 15px;
+            margin: 5px 0 20px 0;
+            display: inline-block;
+            border: none;
+            background: rgb(117, 10, 10);
+            }
+            .button {
+                text-align:center;
+            }
+            label {
+                display: inline-block;
+                width: 80%;
+                text-align: right;
+                font-weight: bold;
+                color:rgba(255, 255, 255, 0.432);
+            }
+
+        </style>
+    </head>
+        <body  bgcolor="black" topmargin="20" leftmargin="20" rightmargin="20">
+            <div class="container">
+            <h1 style="color:rgba(255, 255, 255, 0.432);text-align:center;">Register here to view my WebPage</h1>
+                <label>
+                    First Name:
+                    &emsp; <input name="name" type="text" placeholder="Enter first name"><br/>
+                </label>
+                <label>
+                    Last Name:
+                    &emsp; <input name="name" type="text" placeholder="Enter last name"><br/>
+                </label>
+                <label>
+                    enter email:
+                    &emsp; <input name="email" type="email" placeholder="Enter email"><br/>
+                </label>
+                <label>
+                    Enter Password:
+                    &emsp; <input name="password" type="password" placeholder="Enter Password"><br/>
+                </label>
+                <label>
+                    Re-enter Password:
+                    &emsp; <input name="password" type="password" placeholder="Enter Password">
+                </label>
+                <label>    
+                    Select University: 
+                    &emsp; <input name="University" type="text" list="universities" placeholder="University">
+                    <datalist id="universities">
+                        <option value="IIITH">
+                        <option value="JNTUH">
+                        <option value="JNTUK">
+                        <option value="JNTUA">
+                        <option value="SVU">
+                        <option value="GITAM">
+                        <option value="VIT">
+                        <option value="BITS Pilani">
+                        <option value="CBIT">
+                        <option value="CVR">
+                        <option value="Vardhaman">
+                        <option value="MallaReddy">
+                        <option value="VNR VignanJyothi">
+                        <option value="Gurunanak">
+                        <option value="Gokaraju Rangaraju">
+                        <option value="MLR">
+                        <option value="Osmania">
+                        <option value="Sri Venkateswara">
+                        <option value="others">
+                    </datalist>
+                </label>
+                <label>
+                    Gender:
+                    &emsp;<input name="gender" type="text" list="genders" placeholder="Select Gender"> 
+                    <datalist id="genders">
+                        <option value="Male">
+                        <option value="Female">
+                        <option value="Others">
+                    </datalist>
+                </label>
+            &emsp;
+            <div class="button">
+                <button type="Submit" class="registration"><a href="MyWebPage.html">REGISTER</a></button>
+            </div>
+        </body>
+</html>
