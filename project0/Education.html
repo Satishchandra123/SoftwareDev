@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Education</title>
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+        <link rel="stylesheet" href="inheritance.css">
+        <style>
+            table {
+                border: 2px solid black;
+                border-collapse: collapse;
+                width: 700px;
+                margin-left:auto;margin-right:auto;
+            }
+            th {
+                border: 1px solid black;
+                background-color: darkslategray;
+                padding: 5px;
+                text-align: center;
+            }
+            td {
+                border: 1px solid black;
+                background-color: dimgrey;
+                padding: 5px;
+                text-align: center;
+            }
+            .grid {
+                background-color:darkslategray;
+                display: grid;
+                padding: 10px;
+                grid-column-gap: 10px;
+                grid-row-gap: 10px;
+                grid-template-columns: auto auto auto;
+            }
+
+            .grid-item {
+                background-color: black;
+                font-size: 20px;
+                color: white;
+                padding: 20px;
+                text-align: center;
+            }
+            .button {
+                text-align:center;
+            }
+            button:hover {
+                background-color:yellow;
+            }
+            @media print {
+                .screen-only {
+                    display: none;
+                }
+            }
+        </style>
+    </head>
+    <body bgcolor="grey" topmargin="20" leftmargin="20" rightmargin="20">
+        <h1 style="color:black;text-align:center;">Education</h1>
+        <table>
+            <tr>
+                <th>S.no</th>
+                <th>Qualification</th>
+                <th>Year</th>
+                <th>Institution</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Mtech(Pursuing)</td>
+                <td>2019-2021</td>
+                <td>International Institute of Technology, Hyderabad</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Btech</td>
+                <td>2015-2019</td>
+                <td>Gitam University, Visakhapatnam</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Intermediate</td>
+                <td>2013-2015</td>
+                <td>Sri Chaitanya Junior College</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Tenth Standard</td>
+                <td>2012-2013</td>
+                <td>Sri Chaitanya Techno school</td>
+            </tr>
+        </table>
+        &emsp;
+        <p class="screen-only">
+        <div class="line1">My Btech overall cgpa is 7.98</div>
+
+        <div class="line2">My Intermediate Overall score is 88.1%.</div>
+
+        <div class="line3">My Tenth Overall cgpa is 9.7</div>
+        </p>
+        &emsp;
+        <h1 style="color:black;text-align:center;">Languages and Technologies I am good at</h1>
+        <div class="grid">
+            <div class="grid-item">JAVA</div>
+            <div class="grid-item">Python</div>
+            <div class="grid-item">HTML</div>
+            <div class="grid-item">PostGreSQL</div>
+            <div class="grid-item">DBMS</div>
+            <div class="grid-item">DataScience</div>
+        </div>
+       <p>
+           &emsp;
+        <div class="button">
+            <button type="Submit" class="registration"><a href="MyWebsite.html">Home</a></button>
+        </div>
+        </p>
+    </body>
+</html>

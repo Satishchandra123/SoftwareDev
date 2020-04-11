@@ -1,0 +1,24 @@
+
+%message {
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 20px;
+}
+
+.line1 {
+    @extend %message;
+    background-color:red;
+}
+
+.line2 {
+    @extend %message;
+    background-color: skyblue;
+}
+
+.line3 {
+    @extend %message;
+    background-color: yellow;
+}
