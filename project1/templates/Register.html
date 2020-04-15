@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RegisterPage</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style>
+            body {
+                background-color: skyblue;
+            }
+            .container {
+                padding: 16px;
+            }
+
+            input[type=text], input[type=password], input[type=email] {
+                width: 70%;
+                padding: 10px;
+                margin: 15px 0 20px 0;
+                display: inline-block;
+                border: none;
+                background:white;
+                color: black;
+            }
+
+            .button {
+                text-align:center;
+                margin-right: auto;
+                margin-left: 280px;
+                margin-top: 5px;
+                margin-bottom: 20px;
+            }
+
+            form {
+                display: inline-block;
+                width: 80%;
+                text-align: right;
+                font-weight: bold;
+                color:black;
+            }
+        </style>
+    </head>
+        <body bgcolor="skyblue" topmargin="40" leftmargin="20" rightmargin="20">
+            <div class="container">
+            <h1 style="color:black;text-align:center;">REGISTRATION PAGE</h1>
+                <form action = "{{url_for('register')}}" method="POST">
+                    User Name:
+                    &emsp; <input name="name" type="text" placeholder="Enter user name"><br/>
+                    <!-- Last Name:
+                    &emsp; <input name="name" type="text" placeholder="Enter last name"><br/> -->
+                    enter email:
+                    &emsp; <input name="email" type="email" placeholder="Enter email"><br/>
+                    Enter Password:
+                    &emsp; <input name="pwd" type="password" placeholder="Enter Password"><br/>
+                    Re-enter Password:
+                    &emsp; <input name="repwd" type="password" placeholder="Re-enter Password"><br/>
+                    Select University: 
+                    &emsp; <input name="University" type="text" list="universities" placeholder="University">
+                    <datalist id="universities">
+                        <option value="IIITH">
+                        <option value="JNTUH">
+                        <option value="JNTUK">
+                        <option value="JNTUA">
+                        <option value="SVU">
+                        <option value="GITAM">
+                        <option value="VIT">
+                        <option value="BITS Pilani">
+                        <option value="CBIT">
+                        <option value="CVR">
+                        <option value="Vardhaman">
+                        <option value="MallaReddy">
+                        <option value="VNR VignanJyothi">
+                        <option value="Gurunanak">
+                        <option value="Gokaraju Rangaraju">
+                        <option value="MLR">
+                        <option value="Osmania">
+                        <option value="Sri Venkateswara">
+                        <option value="others">
+                    </datalist><br/>
+                    Gender:
+                    &emsp; <input name="gender" type="text" list="genders" placeholder="Select Gender"> 
+                    <datalist id="genders">
+                        <option value="Male">
+                        <option value="Female">
+                        <option value="Others">
+                    </datalist></br>    
+                    &emsp;
+                    <div class="button">
+                        <button type="submit" class="btn btn-primary">REGISTER</button>
+                    </div>
+                </form>
+        </body>
+</html>
