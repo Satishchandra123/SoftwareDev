@@ -31,8 +31,10 @@ def register():
     if(request.method == "POST"):
         name = request.form.get("name")
         pwd = request.form.get("pwd")
+        email = request.form.get("email")
         print("name : " ,name)
         print("password : ",pwd)
+        print("email: ",email)
         return render_template("hello.html", name=name)
 
     return render_template("Register.html")
