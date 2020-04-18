@@ -39,7 +39,7 @@ def register():
         pwd = request.form.get("pwd")
         email = request.form.get("email")
         gender = request.form.get("gender")
-        user_details = Users(name= name, email= email, gender= gender,datetime = datetime.now())
+        user_details = Users(name= name, email= email, gender= gender,password= pwd,datetime = datetime.now())
         try:
             db.session.add(user_details)
             db.session.commit()
@@ -56,4 +56,14 @@ def register():
 def table():
     users = Users.query.all()
     return render_template("admin.html",user_details=users)
+
+@app.route("/auth")
+def login():
+    if(request.method == "POST"):
+        if not request.form.get("username"):
+            return render_template("loginerror.html")
+        elif not request.form.get("email"):
+            return render_template("loginerror.html")
+        elif not request.form.get("password")
+            return render_template("loginerror.html")
 
