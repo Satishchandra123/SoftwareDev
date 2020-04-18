@@ -2,7 +2,11 @@
 <html>
     <head>
         <title>RegisterPage</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <style>
+             body {
+                background-color: skyblue;
+            }
             .container {
                 padding: 16px;
             }
@@ -12,47 +16,42 @@
             margin: 5px 0 20px 0;
             display: inline-block;
             border: none;
-            background: rgb(117, 10, 10);
+            background:white;
+            color:black;
             }
             .button {
                 text-align:center;
+                margin-right: auto;
+                margin-left: 280px;
+                margin-top: 5px;
+                margin-bottom: 20px;
             }
-            label {
+            form {
                 display: inline-block;
                 width: 80%;
                 text-align: right;
                 font-weight: bold;
-                color:rgba(255, 255, 255, 0.432);
+                color:black;
             }
             button:hover {
                 background-color:yellow;
             }
         </style>
     </head>
-        <body  bgcolor="black" topmargin="20" leftmargin="20" rightmargin="20">
+        <body  bgcolor="skyblue" topmargin="40" leftmargin="20" rightmargin="20">
             <div class="container">
-            <h1 style="color:rgba(255, 255, 255, 0.432);text-align:center;">Register here to view my WebPage</h1>
-                <label>
+            <h1 style="color:black;text-align:center;">Register here to view my WebPage</h1>
+                <form>
                     First Name:
                     &emsp; <input name="name" type="text" placeholder="Enter first name"><br/>
-                </label>
-                <label>
                     Last Name:
                     &emsp; <input name="name" type="text" placeholder="Enter last name"><br/>
-                </label>
-                <label>
                     enter email:
                     &emsp; <input name="email" type="email" placeholder="Enter email"><br/>
-                </label>
-                <label>
                     Enter Password:
                     &emsp; <input name="password" type="password" placeholder="Enter Password"><br/>
-                </label>
-                <label>
                     Re-enter Password:
-                    &emsp; <input name="password" type="password" placeholder="Enter Password">
-                </label>
-                <label>    
+                    &emsp; <input name="password" type="password" placeholder="Re-Enter Password"><br/>
                     Select University: 
                     &emsp; <input name="University" type="text" list="universities" placeholder="University">
                     <datalist id="universities">
@@ -75,20 +74,18 @@
                         <option value="Osmania">
                         <option value="Sri Venkateswara">
                         <option value="others">
-                    </datalist>
-                </label>
-                <label>
+                    </datalist><br/>
                     Gender:
                     &emsp;<input name="gender" type="text" list="genders" placeholder="Select Gender"> 
                     <datalist id="genders">
                         <option value="Male">
                         <option value="Female">
                         <option value="Others">
-                    </datalist>
-                </label>
-            &emsp;
-            <div class="button">
-                <button type="Submit" class="registration"><a href="Home.html">REGISTER</a></button>
-            </div>
+                    </datalist></br>
+                    &emsp;
+                    <div class="button">
+                        <button type="Submit" class="registration"><a href="Home.html">REGISTER</a></button>
+                    </div>
+                </form>  
         </body>
 </html>
