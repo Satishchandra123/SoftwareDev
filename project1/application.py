@@ -34,7 +34,7 @@ def index():
 @app.route("/register",methods=["GET","POST"])
 def register():
     if(request.method == "POST"):
-        # Users.query.all()
+        Users.query.all()
         name = request.form.get("name")
         pwd = request.form.get("pwd")
         email = request.form.get("email")
