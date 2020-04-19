@@ -73,10 +73,9 @@ def auth():
             else: 
                 return render_template("Register.html",name="wrong password")
         else:
-            return render_template("Register.html",name="No account is there with this email")
+            return render_template("Register.html",name="No account is registered with this email")
     return render_template("login.html")
 
-# @app.route("/login.html",methods=["GET","POST"])
-# def login():
-#     if request.method == "GET":
-#         return render_template("login.html")
+# @app.route("/logout")
+# def logout():
+#     return render_template("Register.html")
