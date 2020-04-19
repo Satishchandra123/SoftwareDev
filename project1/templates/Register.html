@@ -8,13 +8,13 @@
                 background-color: skyblue;
             }
             .container {
-                padding: 16px;
+                padding: 106px;
             }
 
             input[type=text], input[type=password], input[type=email] {
                 width: 70%;
                 padding: 10px;
-                margin: 15px 0 20px 0;
+                margin: 55px 0 10px 0;
                 display: inline-block;
                 border: none;
                 background:white;
@@ -25,7 +25,7 @@
                 text-align:center;
                 margin-right: auto;
                 margin-left: 280px;
-                margin-top: 5px;
+                margin-top: 35px;
                 margin-bottom: 20px;
             }
 
@@ -41,6 +41,9 @@
         <body bgcolor="skyblue" topmargin="40" leftmargin="20" rightmargin="20">
             <div class="container">
             <h1 style="color:black;text-align:center;">REGISTRATION PAGE</h1>
+            {%if name%}
+                <p>The error is : {{name}}</p>
+            {%endif%}
                 <form action = "{{url_for('register')}}" method="POST">
                     User Name:
                     &emsp; <input name="name" type="text" placeholder="Enter user name" required><br/>
@@ -50,7 +53,7 @@
                     &emsp; <input name="email" type="email" placeholder="Enter email" required><br/>
                     Enter Password:
                     &emsp; <input name="pwd" type="password" placeholder="Enter Password" required><br/>
-                    Re-enter Password:
+                    <!-- Re-enter Password:
                     &emsp; <input name="repwd" type="password" placeholder="Re-enter Password" required><br/>
                     Select University: 
                     &emsp; <input name="University" type="text" list="universities" placeholder="University" required>
@@ -82,11 +85,12 @@
                         <option value="Female">
                         <option value="Others">
                     </datalist></br>    
-                    &emsp;
+                    &emsp; -->
                     <div class="button">
                         <button type="submit" class="btn btn-primary">REGISTER</button>
-                        <button type="submit" class="btn btn-primary">LOGIN</button>
-                    </div>
+                        <button type="submit" formaction="/auth" class="btn btn-primary">LOGIN</button>
+                    </div></br>
                 </form>
+                <!-- <a href = "login.html"><button type="submit" class="btn btn-primary">LOGIN</button></a> -->
         </body>
 </html>

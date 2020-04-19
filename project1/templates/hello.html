@@ -3,6 +3,10 @@
     <head>
         <title>My Website!</title>
         <style> 
+            .container {
+                padding: 106px;
+            }
+
             body {
                 background-color: skyblue;
             }
@@ -11,10 +15,13 @@
             }
         </style>
     </head>
+    
     <body>
-        {% if name %}
-        <h1>Hello {{name}}, you have successfully registered </h1>
-        <h2>Welcome..!</h2>
-        {% endif %}
-    </body>
+        <div class=container>
+            {% if name %}
+            <h1>Hello {{name}}, you have successfully registered </h1>
+            <h2>Welcome..!</h2>
+            {% endif %}
+        </div>
+    </body>    
 </html>

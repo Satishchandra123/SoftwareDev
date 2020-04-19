@@ -38,32 +38,45 @@ def register():
         name = request.form.get("name")
         pwd = request.form.get("pwd")
         email = request.form.get("email")
-        gender = request.form.get("gender")
-        user_details = Users(name= name, email= email, gender= gender,password= pwd,datetime = datetime.now())
+        # gender = request.form.get("gender")
+        user_details = Users(name= name, email= email,password= pwd,datetime = datetime.now())
         try:
             db.session.add(user_details)
             db.session.commit()
             print("name : " ,name)
             print("password : ",pwd)
             print("email: ",email)
-            print("gender: ",gender)
+            # print("gender: ",gender)
             return render_template("hello.html", name=name)
         except Exception:
             return render_template("errorpage.html")
     return render_template("Register.html")
+
 
 @app.route("/admin")
 def table():
     users = Users.query.all()
     return render_template("admin.html",user_details=users)
 
-@app.route("/auth")
-def login():
+@app.route("/auth",methods = ["GET","POST"])
+def auth():
     if(request.method == "POST"):
-        if not request.form.get("username"):
-            return render_template("loginerror.html")
-        elif not request.form.get("email"):
-            return render_template("loginerror.html")
-        elif not request.form.get("password")
-            return render_template("loginerror.html")
+        # name = request.form.get("name")
+        email = request.form.get("email")
+        pwd = request.form.get("pwd")
+        
+        details = Users.query.get(email)
 
+        if details != None:
+            if pwd == details.password:
+                return render_template("login.html")
+            else: 
+                return render_template("Register.html",name="wrong password")
+        else:
+            return render_template("Register.html",name="No account is there with this email")
+    return render_template("login.html")
+
+# @app.route("/login.html",methods=["GET","POST"])
+# def login():
+#     if request.method == "GET":
+#         return render_template("login.html")
