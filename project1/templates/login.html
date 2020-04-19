@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>My Website!</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <style> 
             .container {
                 padding: 106px;
@@ -12,21 +13,14 @@
             h1 {
                 text-align: center;
             }
-            .button {
-                text-align:center;
-                margin-right: auto;
-                margin-left: 280px;
-                margin-top: 35px;
-                margin-bottom: 20px;
-            }
         </style>
     </head>
     <body>
         <div class=container>
             <h1>You are successfully logged in</h1>
         </div>
-        <form action="/register" class="inline">
-            <button class="float-center submit-button" >Logout</button>
+        <form action="/logout" class="inline">
+            <button type="submit" class="btn btn-primary" style = "margin-left: 50%;">LOGOUT</button>
         </form>
     </body>
 </html>

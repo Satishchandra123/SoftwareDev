@@ -1,12 +1,12 @@
 import os
-
-from flask import Flask, session
+from flask import Flask, session,redirect,url_for
 from flask_session import Session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from flask import render_template, request
 from Users import *
 from datetime import datetime
+
 
 app = Flask(__name__)
 
@@ -21,6 +21,7 @@ app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db.init_app(app)
+app.secret_key = "session"
 
 # # Set up database
 # engine = create_engine(os.getenv("DATABASE_URL"))
@@ -29,7 +30,13 @@ db.init_app(app)
 
 @app.route("/")
 def index():
-    return "Project 1: TODO"
+    # return "Project 1: TODO"
+    if session['email'] != None:
+    # if 'email' in session:
+        # email = session['email']
+        return render_template("login.html")
+    else:
+        return render_template("Register.html")
 
 @app.route("/register",methods=["GET","POST"])
 def register():
@@ -69,6 +76,7 @@ def auth():
 
         if details != None:
             if pwd == details.password:
+                session['email'] = email
                 return render_template("login.html")
             else: 
                 return render_template("Register.html",name="wrong password")
@@ -76,6 +84,7 @@ def auth():
             return render_template("Register.html",name="No account is registered with this email")
     return render_template("login.html")
 
-# @app.route("/logout")
-# def logout():
-#     return render_template("Register.html")
+@app.route("/logout")
+def logout():
+    session['email'] = None
+    return redirect(url_for("register"))
