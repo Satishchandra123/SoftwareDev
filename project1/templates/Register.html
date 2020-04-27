@@ -49,6 +49,7 @@
             {%if name%}
                 <p>{{name}}</p>
             {%endif%}
+                <p>{{message}}</p>
                 <form action = "{{url_for('register')}}" method="POST">
                     User Name:
                     &emsp; <input name="name" type="text" placeholder="Enter user name" required><br/>

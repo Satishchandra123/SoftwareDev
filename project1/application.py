@@ -31,7 +31,7 @@ app.secret_key = "session"
 @app.route("/")
 def index():
     # return "Project 1: TODO"
-    if session['email'] != None:
+    if session["email"] != None:
     # if 'email' in session:
         # email = session['email']
         return render_template("login.html")
@@ -56,7 +56,7 @@ def register():
             # print("gender: ",gender)
             return render_template("hello.html", name=name)
         except Exception:
-            return render_template("errorpage.html")
+            return render_template("Register.html", message = "Email already exists Please Register again")
     return render_template("Register.html")
 
 
@@ -76,7 +76,7 @@ def auth():
 
         if details != None:
             if pwd == details.password:
-                session['email'] = email
+                session["email"] = email
                 return render_template("login.html")
             else: 
                 return render_template("Register.html",name="wrong password")
@@ -86,5 +86,5 @@ def auth():
 
 @app.route("/logout")
 def logout():
-    session['email'] = None
+    session["email"] = None
     return redirect(url_for("register"))
