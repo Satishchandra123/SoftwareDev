@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>My Website!</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style> 
+            body {
+                background-color: white;
+            }
+            h1,h2 {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Registered Users Data</h1>
+        <table class="table table-hover table-dark">
+            <thead>
+              <tr>
+                <th scope="col">Username</th>
+                <th scope="col">Password</th>
+                <th scope="col">Email</th>
+                <!-- <th scope="col">Gender</th> -->
+                <th scope="col">TimeStamp</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for user in user_details %}
+            <tr>  
+                <td>{{user.name}}</td>
+                <td>{{user.password}}</td>
+                <td>{{user.email}}</td>
+                <!-- <td>{{user.gender}}</td> -->
+                <td>{{user.datetime}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </body>
+</html>
