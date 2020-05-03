@@ -50,52 +50,67 @@
                 <p>{{name}}</p>
             {%endif%}
                 <p>{{message}}</p>
-                <form action = "{{url_for('register')}}" method="POST">
+                <script type="text/javascript">
+
+                    function checkPassword(str) {
+                        if (str.match(/[a-z]/g) && str.match( 
+                                    /[A-Z]/g) && str.match( 
+                                    /[0-9]/g) && str.match( 
+                                    /[^a-zA-Z\d]/g) && str.length >= 6) {
+                            return true
+                        } else {
+                            return false
+                        }
+                    }
+                
+                    function ValidateEmail(email) {
+                        if (/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/.test(email)) {
+                            return true
+                        } else {
+                            return false
+                        }
+                    }
+                
+                    function checkForm(form) {
+                        console.log("Hello");
+                        if(form.name.value == "") {
+                            document.getElementById("textdisplay").innerHTML="Username can't be empty";
+                            return false;
+                        }
+                        if(form.email.value == "") {
+                            document.getElementById("textdisplay").innerHTML="email can't be empty";
+                            return false;
+                        }
+                        else if(!ValidateEmail(form.email.value)) {
+                            document.getElementById("textdisplay").innerHTML="You have entered an invalid email address";
+                            return false;
+                        } else {
+                            if(form.pwd.value != "") {
+                                if(!checkPassword(form.pwd.value)) {
+                                    document.getElementById("textdisplay").innerHTML="The password length should be minimum 6 and must contain atleast one uppercase letter, one number, and a special character";
+                                    return false;
+                                }
+                            }
+                            else {
+                                document.getElementById("textdisplay").innerHTML="password can't be empty";
+                                return false;
+                            }
+                        }
+                        return true;
+                    }
+                </script>
+                <form action = "{{url_for('register')}}" method="POST" onsubmit=" return checkForm(this);">
                     User Name:
                     &emsp; <input name="name" type="text" placeholder="Enter user name" required><br/>
-                    <!-- Last Name:
-                    &emsp; <input name="name" type="text" placeholder="Enter last name"><br/> -->
                     enter email:
                     &emsp; <input name="email" type="email" placeholder="Enter email" required><br/>
                     Enter Password:
                     &emsp; <input name="pwd" type="password" placeholder="Enter Password" required><br/>
-                    <!-- Re-enter Password:
-                    &emsp; <input name="repwd" type="password" placeholder="Re-enter Password" required><br/>
-                    Select University: 
-                    &emsp; <input name="University" type="text" list="universities" placeholder="University" required>
-                    <datalist id="universities">
-                        <option value="IIITH">
-                        <option value="JNTUH">
-                        <option value="JNTUK">
-                        <option value="JNTUA">
-                        <option value="SVU">
-                        <option value="GITAM">
-                        <option value="VIT">
-                        <option value="BITS Pilani">
-                        <option value="CBIT">
-                        <option value="CVR">
-                        <option value="Vardhaman">
-                        <option value="MallaReddy">
-                        <option value="VNR VignanJyothi">
-                        <option value="Gurunanak">
-                        <option value="Gokaraju Rangaraju">
-                        <option value="MLR">
-                        <option value="Osmania">
-                        <option value="Sri Venkateswara">
-                        <option value="others">
-                    </datalist><br/>
-                    Gender:
-                    &emsp; <input name="gender" type="text" list="genders" placeholder="Select Gender" required> 
-                    <datalist id="genders">
-                        <option value="Male">
-                        <option value="Female">
-                        <option value="Others">
-                    </datalist></br>    
-                    &emsp; -->
                     <div class="button">
                         <button type="submit" class="btn btn-primary">REGISTER</button>
                         <button type="submit" formaction="/auth" class="btn btn-primary">LOGIN</button>
                     </div></br>
                 </form>
+                <p id = "textdisplay"></p>
         </body>
 </html>

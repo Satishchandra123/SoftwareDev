@@ -31,9 +31,9 @@ app.secret_key = "session"
 @app.route("/")
 def index():
     # return "Project 1: TODO"
-    if session["email"] != None:
-    # if 'email' in session:
-        # email = session['email']
+    # if session["email"] != None:
+    if 'email' in session:
+        email = session['email']
         return render_template("login.html")
     else:
         return render_template("Register.html")
